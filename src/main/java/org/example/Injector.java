@@ -4,9 +4,17 @@ import java.io.FileInputStream;
 import java.lang.reflect.Field;
 import java.util.Properties;
 
+/**
+ * Класс для автоматического внедрения зависимостей в объекты.
+ * Ищет поля, помеченные аннотацией и инициализирует их
+ * экземплярами классов, указанных в конфигурационном файле.
+ */
 public class Injector {
     private Properties properties;
 
+    /**
+     * Конструктор по умолчанию. Загружает конфигурацию из файла config.properties.
+     */
     public Injector() {
         properties = new Properties();
         try {
@@ -16,6 +24,12 @@ public class Injector {
         }
     }
 
+    /**
+     * Внедряет зависимости в переданный объект.
+     * @param object объект, в который нужно внедрить зависимости
+     * @return тот же объект с внедренными зависимостями
+     * @param <T> тип объекта для внедрения зависимостей
+     */
     public <T> T inject(T object) {
         Class<?> clazz = object.getClass();
 

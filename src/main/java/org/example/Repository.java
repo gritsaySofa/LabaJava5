@@ -1,5 +1,11 @@
 package org.example;
 
-interface Repository {
-    void saveData();
+/**
+ * Интерфейс, определяющий контракт для репозиториев, работающих с данными.
+ */
+ interface Repository {
+/**
+ * Сохраняет данные в соответствующее хранилище.
+ */
+ void saveData();
 }
