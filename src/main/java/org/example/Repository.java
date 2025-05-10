@@ -3,7 +3,7 @@ package org.example;
 /**
  * Интерфейс, определяющий контракт для репозиториев, работающих с данными.
  */
- interface Repository {
+public interface Repository {
 /**
  * Сохраняет данные в соответствующее хранилище.
  */
